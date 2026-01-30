@@ -793,37 +793,46 @@
             gap: 15px;
             font-family: var(--font-body);
             font-size: clamp(0.65rem, 1.5vw, 0.75rem);
-            font-weight: 600;
+            font-weight: 700;
             color: var(--copper);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 25px;
         }
 
+                   .about-label {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: var(--font-display); /* Heading font use panniruken */
+            /* Idhu dhaan ippo main title, so size-ah nalla perusaakiyachu */
+            font-size: clamp(1.8rem, 5vw, 3rem); 
+            font-weight: 600;
+            color: var(--copper);
+            letter-spacing: 2px; /* Letter spacing-ah konjam kuraichuruken readability-kaga */
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
         .about-label::before {
             content: '';
-            width: 40px;
-            height: 2px;
+            width: 50px;
+            height: 3px; /* Line thickness konjam yethiruken title-ku yethamari */
             background: var(--gold-gradient);
         }
 
         .about-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 5vw, 3.2rem);
-            font-weight: 500;
+            font-family: var(--font-body); /* Subtitle kaga body font */
+            /* Indha line-ah ippo chinnadha mathiyachu */
+            font-size: clamp(1rem, 2.5vw, 1.4rem); 
+            font-weight: 400;
             color: var(--charcoal);
-            line-height: 1.2;
+            line-height: 1.5;
             margin-bottom: 30px;
+            opacity: 0.85; /* Light-ah opacity kuraicha innum elegant-ah irukum */
         }
 
-        .about-text {
-            font-family: var(--font-body);
-            font-size: clamp(0.95rem, 2vw, 1.05rem);
-            font-weight: 300;
-            color: var(--smoke);
-            line-height: 2;
-            margin-bottom: 25px;
-        }
+
 
         .about-quote {
             font-family: var(--font-elegant);
@@ -1027,93 +1036,107 @@
             line-height: 1.9;
         }
 
-        /* ========== TIMELINE ========== */
-        .timeline {
-            padding: clamp(60px, 12vw, 120px) 5%;
-            background: var(--cream);
-        }
+      /* ========== TIMELINE STYLES ========== */
+.timeline {
+    padding: clamp(60px, 12vw, 120px) 5%;
+    background: var(--cream);
+    overflow: hidden;
+}
 
-        .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
+.about-label {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align for header */
+    gap: 15px;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 3rem); /* Our Philosophy Perusu */
+    font-weight: 600;
+    color: var(--copper);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
 
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--gold-primary), var(--copper), var(--gold-primary));
-            transform: translateX(-50%);
-        }
+.about-label::before, .about-label::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: var(--gold-gradient);
+}
 
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: clamp(60px, 12vw, 100px);
-            position: relative;
-        }
+.about-title {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2.5vw, 1.4rem); /* Waste line chinnathu */
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.5;
+    opacity: 0.85;
+}
 
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-            text-align: right;
-        }
+.timeline-container {
+    max-width: 1200px; /* Increased for image space */
+    margin: 0 auto;
+    position: relative;
+}
 
-        .timeline-content {
-            width: 45%;
-            padding: clamp(25px, 5vw, 40px);
-            background: var(--ivory);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-            transition: all 0.4s ease;
-        }
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gold-primary);
+    transform: translateX(-50%);
+    opacity: 0.3;
+}
 
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border-color: var(--gold-primary);
-        }
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(80px, 15vw, 150px);
+    position: relative;
+    width: 100%;
+}
 
-        .timeline-emoji {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            margin-bottom: 15px;
-        }
+/* Zig-Zag Logic */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-        .timeline-year {
-            font-family: var(--font-display);
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            font-weight: 600;
-            color: var(--gold-dark);
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
+/* Content and Media sharing space */
+.timeline-content, .timeline-media {
+    width: 42%; /* Gap maintain panna 42% */
+    flex-shrink: 0;
+}
 
-        .timeline-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.3rem, 3vw, 1.6rem);
-            font-weight: 500;
-            color: var(--charcoal);
-            margin-bottom: 15px;
-        }
+.timeline-content {
+    padding: clamp(25px, 4vw, 40px);
+    background: var(--ivory);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
 
-        .timeline-text {
-            font-family: var(--font-body);
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
-            font-weight: 300;
-            color: var(--smoke);
-            line-height: 1.9;
-        }
+.timeline-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
 
-        /* Timeline Icon Emoji - Replace old .timeline-dot */
+.timeline-item:hover .timeline-media img {
+    transform: scale(1.05);
+}
+
+/* Timeline Icons in the Middle */
 .timeline-icon {
     position: absolute;
     left: 50%;
-    top: 40px;
-    transform: translateX(-50%);
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    z-index: 2;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    z-index: 5;
     background: var(--cream);
     width: 60px;
     height: 60px;
@@ -1121,31 +1144,46 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 3px solid var(--gold-primary);
-    box-shadow: 0 0 0 6px var(--cream), 0 5px 20px rgba(212, 175, 55, 0.3);
-    transition: all 0.4s ease;
+    border: 2px solid var(--gold-primary);
+    box-shadow: 0 0 0 8px var(--cream);
 }
 
-.timeline-item:hover .timeline-icon {
-    transform: translateX(-50%) scale(1.15);
-    box-shadow: 0 0 0 8px var(--cream), 0 10px 30px rgba(212, 175, 55, 0.5);
+/* Card Texts */
+.timeline-year {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: var(--gold-dark);
+    margin-bottom: 10px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .timeline-icon {
-        left: 15px;
-        transform: translateX(0);
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
+.timeline-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 900px) {
+    .timeline-line { left: 30px; transform: none; }
     
-    .timeline-item:hover .timeline-icon {
-        transform: translateX(0) scale(1.1);
+    .timeline-item, .timeline-item:nth-child(even) {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 70px;
+    }
+
+    .timeline-content, .timeline-media {
+        width: 100%;
+    }
+
+    .timeline-media { margin-top: 20px; }
+
+    .timeline-icon {
+        left: 30px;
+        top: 0;
+        transform: translateX(-50%);
     }
 }
-
         /* ========== VALUES SECTION ========== */
         .values {
             background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
@@ -1535,6 +1573,44 @@
             color: var(--smoke);
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+                /* 1. Subtitle-ah dark-ah maatha (Making a Real Difference) */
+        .impact .section-title {
+            color: var(--charcoal) !important; /* Direct charcoal color */
+            opacity: 1; /* Translucency-ah remove panniyachu */
+            font-weight: 600;
+        }
+
+        /* 2. Numbers-ah nalla dark-ah maatha (30%, 100%, etc.) */
+        .impact-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 700; /* Innum konjam bold aakiyachu */
+            
+            /* Gradient-ku bathila nalla dark solid color */
+            color: #4a3728; /* Oru nalla dark chocolate/coffee brown color */
+            
+            /* Or neenga charcoal-e venum na keela iruka line-ah use pannunga */
+            /* color: var(--charcoal); */
+            
+            background: none;
+            -webkit-text-fill-color: initial;
+            margin-bottom: 10px;
+        }
+
+        /* 3. Vertical Lines-ah clear-ah kaata */
+        .impact-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px; /* 1px-la irundhu 2px aakiyachu */
+            height: 60%;
+            /* Transparent gradient-ku bathila solid color */
+            background: var(--gold-primary); 
+            opacity: 0.6; /* Light-ah opacity vecha professional-ah irukum */
         }
 
         /* ========== EMPOWERMENT SECTION ========== */
@@ -2378,7 +2454,7 @@
         <div class="hero-video-container">
             <!-- 📹 VIDEO PATH: Add your hero background video here (coconut palms/nature) -->
             <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
-                <source src="loader video.mp4" type="video/mp4">
+                <source src="video/Loader Background Video - Trim.mp4" type="video/mp4">
             </video>
             <!-- 🖼️ FALLBACK IMAGE: If video doesn't load -->
             <img src="Imges/Gemini_Generated_Image_jqejykjqejykjqej.png" alt="Nature Background" class="hero-fallback-image">
@@ -2449,15 +2525,15 @@
             <div class="about-visual reveal-right">
                 <div class="about-video-wrapper">
                     <!-- 📹 VIDEO PATH: Craftsmanship/workshop video -->
-                    <video class="about-video" muted loop playsinline poster="Imges/Gemini_Generated_Image_jqejykjqejykjqej.png">
-                        <source src="video/Loader Background Video - Trim.mp4" type="video/mp4">
+                    <video class="about-video" muted loop playsinline poster="final images/Gemini_Generated_Image_13bse913bse913bs.png">
+                        <source src="loader video.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn" id="aboutPlayBtn">
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
                 <!-- 🖼️ IMAGE PATH: Floating image -->
-                <img src="Imges/Gemini_Generated_Image_jqejykjqejykjqej.png" alt="Craftsmanship" class="about-image-float">
+                <img src="final images/Gemini_Generated_Image_ysfllgysfllgysfl.png" alt="Craftsmanship" class="about-image-float">
                 
             </div>
         </div>
@@ -2468,7 +2544,7 @@
         <div class="origin-video-bg">
             <!-- 📹 VIDEO PATH: Origin/nature video background -->
             <video autoplay muted loop playsinline>
-                <source src="video/Loader Background Video - Trim.mp4" type="video/mp4">
+                <source src="loader vide 2.mp4" type="video/mp4">
             </video>
         </div>
         <div class="origin-intro reveal">
@@ -2481,12 +2557,19 @@
         </div>
     </section>
 
-   <!-- Timeline -->
-<section class="timeline">
+  <!-- ========== ORIGIN / TIMELINE SECTION ========== -->
+<section class="timeline" id="origin">
     <div class="timeline-container">
+        
+        <!-- Philosophy Header -->
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 80px;">
+            <div class="about-label">✨ Our Philosophy</div>
+            <h2 class="about-title">Waste is Only Waste if We Fail to See Its Potential</h2>
+        </div>
+
         <div class="timeline-line"></div>
 
-        <!-- Chapter 1 - Coconut Palm Tree -->
+        <!-- Chapter 1 -->
         <div class="timeline-item reveal">
             <div class="timeline-content">
                 <div class="timeline-emoji">💡</div>
@@ -2498,9 +2581,12 @@
                 </p>
             </div>
             <div class="timeline-icon">🌴</div>
+            <div class="timeline-media">
+                <img src="chatline images/Gemini_Generated_Image_o42j09o42j09o42j.png" alt="Vision Born">
+            </div>
         </div>
 
-        <!-- Chapter 2 - Tender Green Coconut (using leaf as green symbol) -->
+        <!-- Chapter 2 -->
         <div class="timeline-item reveal">
             <div class="timeline-content">
                 <div class="timeline-emoji">👩‍🤝‍👩</div>
@@ -2512,9 +2598,12 @@
                 </p>
             </div>
             <div class="timeline-icon">🌿</div>
+            <div class="timeline-media">
+                <img src="chatline images/Gemini_Generated_Image_uy5x19uy5x19uy5x.png" alt="Empowering Women">
+            </div>
         </div>
 
-        <!-- Chapter 3 - Raw Coconut (Brown shell - skin removed) -->
+        <!-- Chapter 3 -->
         <div class="timeline-item reveal">
             <div class="timeline-content">
                 <div class="timeline-emoji">🎨</div>
@@ -2526,9 +2615,12 @@
                 </p>
             </div>
             <div class="timeline-icon">🥥</div>
+            <div class="timeline-media">
+                <img src="chatline images/Gemini_Generated_Image_thltzuthltzuthlt.png" alt="Crafting Excellence">
+            </div>
         </div>
 
-        <!-- Chapter 4 - Finished Product (Bowl/Craft) -->
+        <!-- Chapter 4 -->
         <div class="timeline-item reveal">
             <div class="timeline-content">
                 <div class="timeline-emoji">🌍</div>
@@ -2540,14 +2632,18 @@
                 </p>
             </div>
             <div class="timeline-icon">🥣</div>
+            <div class="timeline-media">
+                <img src="chatline images/Gemini_Generated_Image_hjpopphjpopphjpo.png" alt="Global Impact">
+            </div>
         </div>
+
     </div>
 </section>
 
     <!-- ========== VALUES SECTION ========== -->
     <section class="section values">
         <div class="section-header reveal">
-            <div class="section-label">🌟 Our Pillars</div>
+            <div class="section-label" style="color: white;">🌟 Our Pillars</div>
             <h2 class="section-title light">What Drives Us Every Day</h2>
         </div>
         <div class="values-grid">
@@ -2583,7 +2679,7 @@
         <div class="birds-video-bg">
             <!-- 📹 VIDEO PATH: Birds/nature video -->
             <video autoplay muted loop playsinline poster="Imges/Gemini_Generated_Image_yr69ivyr69ivyr69.png">
-                <source src="video/a__Cinematic_slow_moti.mp4" type="video/mp4">
+                <source src="final images/leaf birds - Trim.mp4" type="video/mp4">
             </video>
         </div>
         <div class="birds-overlay"></div>
@@ -2604,7 +2700,7 @@
         <div class="showcase-video-bg">
             <!-- 📹 VIDEO PATH: Product showcase/rotating products video -->
             <video autoplay muted loop playsinline>
-                <source src="video/Loader Background Video - Trim.mp4" type="video/mp4">
+                <source src="final images/handcraft.mp4" type="video/mp4">
             </video>
         </div>
         <div class="showcase-content reveal">
@@ -2718,7 +2814,7 @@
                         <img src="prodcut image/cup/WhatsApp Image 2026-01-18 at 12.31.18 PM.jpeg" alt="Ice Cream Cups" class="product-image">
                         <!-- 📹 VIDEO PATH -->
                         <video class="product-video" muted loop playsinline>
-                            <source src="video/a__Cinematic_slow_moti.mp4" type="video/mp4">
+                            <source src="" type="video/mp4">
                         </video>
                     </div>
                     <div class="product-overlay">
@@ -2804,17 +2900,17 @@
             <div class="empowerment-media reveal-left">
                 <div class="empowerment-video-wrapper">
                     <!-- 📹 VIDEO PATH: Women working video -->
-                    <video class="empowerment-video" autoplay muted loop playsinline poster="Imges/Gemini_Generated_Image_yr69ivyr69ivyr69.png">
+                    <video class="empowerment-video" autoplay muted loop playsinline poster="final images/leaf.png">
                         <source src="" type="video/mp4">
                     </video>
                 </div>
                 <!-- 🖼️ IMAGE PATHS -->
-                <img src="Imges/Gemini_Generated_Image_jqejykjqejykjqej.png" alt="Craftsmanship" class="empowerment-img">
-                <img src="Imges/Gemini_Generated_Image_yr69ivyr69ivyr69.png" alt="Community" class="empowerment-img">
+                <img src="hero section images/Gemini_Generated_Image_vrc8owvrc8owvrc8.png" alt="Craftsmanship" class="empowerment-img">
+                <img src="hero section images/Gemini_Generated_Image_76acc76acc76acc7.png" alt="Community" class="empowerment-img">
             </div>
             <div class="empowerment-content reveal-right">
                 <div class="section-label">👩‍🌾 Women Empowerment</div>
-                <h2 class="section-title">Architects of Change </h2>
+               <h2 class="section-title" style="color: #2d2d2d !important; opacity: 1 !important; background: none !important; -webkit-text-fill-color: #2d2d2d !important; font-weight: 600;"> Architects of Change </h2>
                 <p class="section-desc">
                     At Thanmathi Exports, women aren't just employees – they're the heart 
                     of our mission.
