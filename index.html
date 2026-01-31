@@ -14,6 +14,16 @@
 
     
     <style>
+        html, body {
+    overflow-x: hidden; /* Side scroll-ah stop pannum */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Padding nala width increase aagatha mari paathukum */
+}
         /* ========== ROOT VARIABLES ========== */
         :root {
             --gold-primary: #D4AF37;
@@ -410,6 +420,45 @@
         }
 
         /* Fallback Image if video doesn't load */
+        @media (max-width: 768px) {
+    /* Hero title size-ah kuraikkanum */
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+        padding: 0 10px;
+    }
+
+    /* Andha brown tag (Sustainable...) side-la murtudhu, so width adjust pannurom */
+    .hero-tag {
+        font-size: 0.65rem !important;
+        letter-spacing: 1px !important;
+        padding: 8px 15px !important;
+        max-width: 90%; 
+        margin: 0 auto 20px !important;
+    }
+
+    /* Quote text (Where agricultural waste...) */
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        padding: 0 20px !important;
+        width: 100% !important;
+    }
+
+    /* Buttons mobile-la side-la muttatha mari */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Phone-la onnu mela onnu buttons vandha nalla irukum */
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 90% !important; /* Mobile-la button nalla perusa click panna easy-ah irukum */
+        text-align: center;
+    }
+}
         .hero-fallback-image {
             position: absolute;
             top: 0;
@@ -2422,7 +2471,7 @@
     <!-- ========== NAVIGATION ========== -->
     <nav class="navbar">
         <a href="index.html" class="nav-logo">
-            <img src="Thanmathi Exports logo_20260112_155236_0000.png" alt="Thanmathi Logo" class="logo-icon"> <!-- உங்கள் லோகோ படத்திற்கான பாதை -->
+            <img src="Compressed images/logo com.png" alt="Thanmathi Logo" class="logo-icon"> <!-- உங்கள் லோகோ படத்திற்கான பாதை -->
             THANMATHI
         </a>
         <ul class="nav-menu">
