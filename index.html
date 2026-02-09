@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="Compressed images/logo com.png">
     <title>Thanmathi Exports | Luxury Sustainable Products ✨</title>
     
     <!-- Premium Google Fonts -->
@@ -14,38 +15,249 @@
 
     
     <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. UNIVERSAL FIX (Side scroll-ah stop panna) */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 2. FULL MOBILE RESPONSIVE CODE (Copy everything below) */
+@media (max-width: 768px) {
+    
+    /* Global Section Spacing */
+    .section {
+        padding: 50px 5% !important;
+    }
+
+    /* Navbar Fix (Logo matrum Hamburger correct-ah align aaga) */
+    .navbar {
+        padding: 10px 5% !important;
+    }
+
+    .nav-logo img {
+        height: 40px !important; /* Mobile logo size */
+    }
+
+    /* Titles Fix (Women Empower, Testimonials - Screenshot prachana) */
+    .hero-title, 
+    .section-label, 
+    .section-title, 
+    .origin-title, 
+    .showcase-title {
+        font-size: clamp(1.8rem, 8vw, 2.6rem) !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Subtitles Fix */
+    .hero-subtitle, 
+    .section-desc, 
+    .origin-subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+    }
+
+    /* Empowerment Section Fix (Icon matrum Text alignment) */
+    .empowerment-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .empowerment-media {
+        grid-template-columns: 1fr !important; /* Image-lam onnu mela onnu vara */
+    }
+
+    .empowerment-item {
+        display: flex !important;
+        flex-direction: row !important; /* Icon side-la text side-la */
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 15px !important;
+        padding: 15px 0 !important;
+    }
+
+    .empowerment-icon {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px !important; /* Icon squeeze aagathu */
+        font-size: 1.2rem !important;
+    }
+
+    /* Origin Section (Images stack) */
+    .origin-intro {
+        padding: 80px 5% !important;
+    }
+
+    /* Timeline Section Fix (Zig-Zag-ah straight line-ah matha) */
+    .timeline-line {
+        left: 20px !important;
+        transform: none !important;
+    }
+
+    .timeline-item, 
+    .timeline-item:nth-child(even) {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 50px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .timeline-content, 
+    .timeline-media {
+        width: 100% !important;
+    }
+
+    .timeline-icon {
+        left: 20px !important;
+        top: 0 !important;
+        transform: translateX(-50%) !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* Testimonials Fix */
+    .testimonial-quote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .testimonial-emoji {
+        font-size: 2.5rem !important;
+    }
+
+    /* Contact Section Fix */
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr !important; /* Name & Email onnu mela onnu */
+        gap: 15px !important;
+    }
+
+    /* Buttons Fix */
+    .hero-cta {
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 15px 20px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         html, body {
     overflow-x: hidden; /* Side scroll-ah stop pannum */
     width: 100%;
     margin: 0;
     padding: 0;
+            body {
+            background: var(--white); /* Force white background */
+            color: var(--text-dark);
+        }
+
+        /* Navbar scrolled aagum podhu white-ah irukanum */
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        /* Dark area-la irundha text-ah dark-ah matha */
+        .nav-link, .nav-logo {
+            color: var(--brand-green) !important;
+        }
+
+        /* Section titles screenshot maari vara */
+        .section-title {
+            color: var(--brand-brown) !important;
+        }
 }
+
 
 * {
     box-sizing: border-box; /* Padding nala width increase aagatha mari paathukum */
 }
         /* ========== ROOT VARIABLES ========== */
+              /* ========== UPDATED ROOT (Same names, New Nature Colors) ========== */
         :root {
-            --gold-primary: #D4AF37;
-            --gold-light: #F4E4BA;
-            --gold-dark: #996515;
-            --copper: #B87333;
-            --bronze: #CD7F32;
-            --champagne: #F7E7CE;
-            --cream: #FFFEF9;
-            --ivory: #FFFFF0;
-            --forest: #1B4332;
-            --sage: #40916C;
-            --moss: #2D5A3D;
-            --charcoal: #1A1A1A;
-            --obsidian: #0D0D0D;
-            --smoke: #2C2C2C;
+            /* Map Gold/Black names to Green/Brown/White colors */
+            --gold-primary: #6B8E61;      /* Screenshot Green */
+            --gold-light: #F9F7F2;        /* Light Cream */
+            --gold-dark: #4A4A4A;         /* Dark Text */
+            --copper: #6B8E61;            /* Green */
+            --bronze: #7D6752;            /* Screenshot Brown */
+            --champagne: #7D6752;         /* Brown for text */
+            --cream: #FFFFFF;             /* Main Background White */
+            --ivory: #F9F7F2;             /* Secondary Background */
+            --forest: #6B8E61;            /* Green */
+            --sage: #A3B899;              /* Muted Green */
+            --moss: #4A4A4A;              /* Dark text color */
+            --charcoal: #333333;          /* Dark text */
+            --obsidian: #FFFFFF;          /* Making Black area into White */
+            --smoke: #7D6752;             /* Brown */
             
-            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F4E4BA 50%, #D4AF37 100%);
-            --dark-gradient: linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 50%, #0D0D0D 100%);
+            --gold-gradient: linear-gradient(135deg, #6B8E61 0%, #8EB085 100%);
+            --dark-gradient: linear-gradient(180deg, #FFFFFF 0%, #F9F7F2 100%);
             
-            --shadow-gold: 0 20px 60px rgba(212, 175, 55, 0.3);
-            --shadow-dark: 0 30px 80px rgba(0, 0, 0, 0.5);
+            --shadow-gold: 0 10px 30px rgba(107, 142, 97, 0.15);
+            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.05);
             
             --font-display: 'Cinzel', serif;
             --font-elegant: 'Cormorant Garamond', serif;
@@ -771,7 +983,7 @@
         .section-label {
             font-size: 3.8rem; /* Significantly increased font size. Adjust as needed (e.g., 4rem, 4.5rem). */
             font-weight: 700;  /* Made bold to act as a primary heading. */
-            color: var(--charcoal); /* Changed color to match the original main title's color, or your primary dark color. */
+            color:green; /* Changed color to match the original main title's color, or your primary dark color. */
             text-transform: uppercase;
             letter-spacing: 0px; /* Reduced letter-spacing for better readability of large text. */
             display: flex;
@@ -810,7 +1022,7 @@
             font-family: var(--font-elegant);
             font-size: clamp(1rem, 2.5vw, 1.3rem);
             font-weight: 400;
-            color: var(--smoke);
+            color: whitesmoke:
             line-height: 1.9;
         }
 
@@ -987,23 +1199,7 @@
         }
 
         /* Video Play Button Overlay */
-        .video-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(212, 175, 55, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            z-index: 10;
-        }
-
+       
         .video-play-btn::before {
             content: '';
             position: absolute;
@@ -1037,22 +1233,56 @@
             overflow: hidden;
         }
 
-        .origin-video-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
+       .origin-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #000; /* Video-vuku pinnadi black vacha dhaan colors nalla theriyum */
+}
 
-        .origin-video-bg video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-        }
+.origin-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* 0.3-la irundhu 0.8-ku mathiruken. Ippo video clear-ah theriyum */
+}
+.origin::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Intha dark overlay text-ah nalla visible aakum */
+    background: rgba(0, 0, 0, 0.45); 
+    z-index: 1;
+}
 
+/* Mukkiyamaana step: Content-ah overlay-ku mela kondu vara */
+.origin-intro {
+    position: relative;
+    z-index: 2; /* Overlay-ku mela text varum */
+}
+.origin::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Intha dark overlay text-ah nalla visible aakum */
+    background: rgba(0, 0, 0, 0.45); 
+    z-index: 1;
+}
+
+/* Mukkiyamaana step: Content-ah overlay-ku mela kondu vara */
+.origin-intro {
+    position: relative;
+    z-index: 2; /* Overlay-ku mela text varum */
+}
         .origin-intro {
             text-align: center;
             padding: clamp(100px, 20vw, 200px) 5%;
@@ -1311,12 +1541,12 @@
         }
 
         .value-text {
-            font-family: var(--font-body);
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            font-weight: 300;
-            color: var(--champagne);
-            line-height: 1.9;
-        }
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 400; /* 300-la irundhu 400-ku mathiruken, appo dhaan text thickness kidaikum */
+    color: rgba(255, 255, 255, 0.9); /* Pure white illaாம light-ah white shade kuduthuruken, nalla readable-ah irukum */
+    line-height: 1.9;
+}
 
         /* ========== PRODUCT VIDEO SHOWCASE ========== */
         .product-showcase {
@@ -1825,7 +2055,7 @@
             font-family: var(--font-elegant);
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             font-style: italic;
-            color: var(--champagne);
+            color:whitesmoke;
             line-height: 1.9;
             max-width: 700px;
             margin: 0 auto 40px;
@@ -2528,7 +2758,7 @@
             <h1 class="hero-title">
                 Transforming Nature's <span class="highlight">Gifts</span> Into Art 
             </h1>
-            <p class="hero-subtitle">
+            <p style="color: whitesmoke;" class="hero-subtitle">
                 "Where agricultural waste becomes luxury, empowering rural women 
                 while protecting our precious birds and planet" 
             </p>
@@ -2574,7 +2804,7 @@
             <div class="about-visual reveal-right">
                 <div class="about-video-wrapper">
                     <!-- 📹 VIDEO PATH: Craftsmanship/workshop video -->
-                    <video class="about-video" muted loop playsinline poster="final images/Gemini_Generated_Image_13bse913bse913bs.png">
+                    <video class="about-video" muted loop playsinline poster="small.jpeg">
                         <source src="loader video.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-btn" id="aboutPlayBtn">
@@ -2582,7 +2812,7 @@
                     </div>
                 </div>
                 <!-- 🖼️ IMAGE PATH: Floating image -->
-                <img src="final images/Gemini_Generated_Image_ysfllgysfllgysfl.png" alt="Craftsmanship" class="about-image-float">
+                <img src="bigg.jpeg" alt="Craftsmanship" class="about-image-float">
                 
             </div>
         </div>
@@ -2599,7 +2829,7 @@
         <div class="origin-intro reveal">
             <span class="origin-emoji">🌴</span>
             <h2 class="origin-title">Our Origin Story</h2>
-            <p class="origin-subtitle">
+            <p style="color: whitesmoke;" class="origin-subtitle">
                 From the lush coconut groves of Southern Tamil Nadu emerges a vision 
                 that transforms tradition into sustainable innovation
             </p>
